@@ -1,0 +1,1225 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PT. XYZ - Solusi Teknologi & Transformasi Digital Terdepan</title>
+  
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Custom Tailwind Theme Configuration -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              50: '#eff6ff',
+              100: '#dbeafe',
+              200: '#bfdbfe',
+              300: '#93c5fd',
+              400: '#60a5fa',
+              500: '#3b82f6',
+              600: '#2563eb',
+              700: '#1d4ed8',
+              800: '#1e40af',
+              900: '#1e3a8a',
+              950: '#0f172a',
+            },
+            accent: {
+              cyan: '#06b6d4',
+              sky: '#0284c7'
+            }
+          },
+          boxShadow: {
+            'glow': '0 0 25px -5px rgba(37, 99, 235, 0.3)',
+            'card-hover': '0 20px 35px -10px rgba(30, 58, 138, 0.12)',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Gradient mesh background */
+    .bg-grid-pattern {
+      background-size: 32px 32px;
+      background-image: 
+        linear-gradient(to right, rgba(226, 232, 240, 0.6) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(226, 232, 240, 0.6) 1px, transparent 1px);
+    }
+    
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #f1f5f9;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #93c5fd;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #3b82f6;
+    }
+  </style>
+</head>
+
+<body class="font-sans antialiased text-slate-700 bg-white selection:bg-brand-600 selection:text-white relative">
+
+  <!-- Top Glassmorphism Navigation Bar -->
+  <header id="main-header" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-white/80 backdrop-blur-lg border-b border-slate-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        
+        <!-- Brand Logo -->
+        <a href="#beranda" class="flex items-center gap-3 group">
+          <div class="w-11 h-11 rounded-xl bg-gradient-to-tr from-brand-700 to-brand-500 flex items-center justify-center text-white shadow-md shadow-brand-500/20 group-hover:scale-105 transition-transform duration-300">
+            <i data-lucide="layers" class="w-6 h-6"></i>
+          </div>
+          <div>
+            <span class="text-2xl font-extrabold tracking-tight text-slate-900 flex items-center gap-1">
+              PT. XYZ<span class="text-brand-600">.</span>
+            </span>
+            <p class="text-[10px] tracking-wider uppercase font-semibold text-slate-400">Enterprise Solutions</p>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
+          <a href="#beranda" class="hover:text-brand-600 transition-colors duration-200">Beranda</a>
+          <a href="#tentang" class="hover:text-brand-600 transition-colors duration-200">Tentang Kami</a>
+          <a href="#layanan" class="hover:text-brand-600 transition-colors duration-200">Layanan</a>
+          <a href="#keunggulan" class="hover:text-brand-600 transition-colors duration-200">Keunggulan</a>
+          <a href="#testimoni" class="hover:text-brand-600 transition-colors duration-200">Testimoni</a>
+          <a href="#kontak" class="hover:text-brand-600 transition-colors duration-200">Kontak</a>
+        </nav>
+
+        <!-- CTA Button -->
+        <div class="hidden md:flex items-center gap-4">
+          <a href="#kontak" class="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full text-sm font-semibold text-white bg-gradient-to-r from-brand-600 to-brand-700 hover:from-brand-700 hover:to-brand-800 shadow-md shadow-brand-600/25 hover:shadow-lg hover:shadow-brand-600/30 transition-all duration-200 hover:-translate-y-0.5">
+            <span>Konsultasi Sekarang</span>
+            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </a>
+        </div>
+
+        <!-- Mobile Menu Toggle Button -->
+        <div class="md:hidden flex items-center">
+          <button id="mobile-menu-btn" type="button" class="p-2 rounded-lg text-slate-600 hover:text-brand-600 hover:bg-slate-100 focus:outline-none" aria-label="Menu Navigasi">
+            <i data-lucide="menu" id="menu-icon" class="w-6 h-6"></i>
+            <i data-lucide="x" id="close-icon" class="w-6 h-6 hidden"></i>
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Mobile Drawer Navigation -->
+    <div id="mobile-menu" class="hidden md:hidden border-b border-slate-200 bg-white/95 backdrop-blur-xl px-4 pt-3 pb-6 space-y-3">
+      <a href="#beranda" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-brand-600 hover:bg-brand-50">Beranda</a>
+      <a href="#tentang" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-brand-600 hover:bg-brand-50">Tentang Kami</a>
+      <a href="#layanan" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-brand-600 hover:bg-brand-50">Layanan</a>
+      <a href="#keunggulan" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-brand-600 hover:bg-brand-50">Keunggulan</a>
+      <a href="#testimoni" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-brand-600 hover:bg-brand-50">Testimoni</a>
+      <a href="#kontak" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-brand-600 hover:bg-brand-50">Kontak</a>
+      <div class="pt-2">
+        <a href="#kontak" class="mobile-link flex items-center justify-center gap-2 w-full px-5 py-3 rounded-xl text-sm font-semibold text-white bg-brand-600 hover:bg-brand-700 shadow-sm">
+          <span>Konsultasi Sekarang</span>
+          <i data-lucide="arrow-right" class="w-4 h-4"></i>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="beranda" class="relative pt-32 pb-20 lg:pt-44 lg:pb-32 overflow-hidden bg-gradient-to-b from-brand-50/70 via-white to-white bg-grid-pattern">
+    <!-- Ambient Blur Background Accents -->
+    <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-brand-400/20 rounded-full blur-3xl pointer-events-none -z-10"></div>
+    <div class="absolute top-1/3 -right-24 w-80 h-80 bg-accent-cyan/15 rounded-full blur-3xl pointer-events-none -z-10"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+        
+        <!-- Left Hero Copy -->
+        <div class="lg:col-span-7 text-center lg:text-left space-y-6">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-100/70 border border-brand-200 text-brand-700 text-xs font-semibold uppercase tracking-wider">
+            <span class="w-2 h-2 rounded-full bg-brand-600 animate-pulse"></span>
+            Partner Transformasi Digital Terpercaya
+          </div>
+
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-[1.15]">
+            Akselerasi Pertumbuhan Bisnis Lewat <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-600 via-brand-700 to-accent-sky">Inovasi Digital Berkelanjutan</span>
+          </h1>
+
+          <p class="text-lg sm:text-xl text-slate-600 max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
+            PT. XYZ menghadirkan solusi teknologi informasi kelas enterprise, integrasi sistem cerdas, dan konsultasi strategis untuk membawa bisnis Anda unggul di era kompetisi modern.
+          </p>
+
+          <!-- Dual CTA Buttons -->
+          <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+            <a href="#kontak" class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-3.5 rounded-xl text-base font-semibold text-white bg-brand-600 hover:bg-brand-700 shadow-lg shadow-brand-600/30 hover:shadow-brand-600/40 hover:-translate-y-0.5 transition-all duration-200">
+              <span>Mulai Konsultasi Gratis</span>
+              <i data-lucide="chevron-right" class="w-4 h-4"></i>
+            </a>
+            <a href="#layanan" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl text-base font-semibold text-slate-700 bg-white border border-slate-200 hover:bg-slate-50 hover:border-slate-300 shadow-sm transition-all duration-200">
+              <i data-lucide="compass" class="w-4 h-4 text-brand-600"></i>
+              <span>Jelajahi Solusi</span>
+            </a>
+          </div>
+
+          <!-- Trust Badges -->
+          <div class="pt-6 border-t border-slate-200/80 grid grid-cols-3 gap-4 max-w-lg mx-auto lg:mx-0 text-left">
+            <div>
+              <p class="text-2xl font-bold text-slate-900">500+</p>
+              <p class="text-xs text-slate-500 font-medium">Proyek Sukses</p>
+            </div>
+            <div>
+              <p class="text-2xl font-bold text-slate-900">99.2%</p>
+              <p class="text-xs text-slate-500 font-medium">SLA Keandalan</p>
+            </div>
+            <div>
+              <p class="text-2xl font-bold text-slate-900">10+ Thn</p>
+              <p class="text-xs text-slate-500 font-medium">Pengalaman Industri</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Hero Interactive Visual Mockup -->
+        <div class="lg:col-span-5 relative">
+          <div class="relative mx-auto max-w-md lg:max-w-none">
+            
+            <!-- Main Glass Card Container -->
+            <div class="relative bg-white rounded-2xl shadow-2xl shadow-slate-900/10 border border-slate-100 overflow-hidden p-6 transition duration-300 hover:shadow-card-hover">
+              
+              <!-- Dashboard Header Simulation -->
+              <div class="flex items-center justify-between pb-5 border-b border-slate-100">
+                <div class="flex items-center gap-3">
+                  <div class="w-9 h-9 rounded-lg bg-brand-50 flex items-center justify-center text-brand-600">
+                    <i data-lucide="bar-chart-3" class="w-5 h-5"></i>
+                  </div>
+                  <div>
+                    <h3 class="text-sm font-bold text-slate-800">Sistem Analitik PT. XYZ</h3>
+                    <p class="text-[11px] text-emerald-600 flex items-center gap-1 font-semibold">
+                      <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-ping"></span> Real-time Optimization
+                    </p>
+                  </div>
+                </div>
+                <span class="px-2.5 py-1 text-xs font-semibold rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200">Aktif</span>
+              </div>
+
+              <!-- Metrics Graphic Simulation -->
+              <div class="mt-6 space-y-4">
+                <div class="p-4 rounded-xl bg-slate-50 border border-slate-100">
+                  <div class="flex justify-between items-center mb-2">
+                    <span class="text-xs font-semibold text-slate-500">Efisiensi Operasional Klien</span>
+                    <span class="text-xs font-bold text-brand-700">+48.5%</span>
+                  </div>
+                  <div class="w-full bg-slate-200 h-2.5 rounded-full overflow-hidden">
+                    <div class="bg-gradient-to-r from-brand-600 to-accent-cyan h-full rounded-full w-[85%]"></div>
+                  </div>
+                </div>
+
+                <div class="p-4 rounded-xl bg-slate-50 border border-slate-100">
+                  <div class="flex justify-between items-center mb-2">
+                    <span class="text-xs font-semibold text-slate-500">Kecepatan Implementasi Sistem</span>
+                    <span class="text-xs font-bold text-brand-700">3.2x Lebih Cepat</span>
+                  </div>
+                  <div class="w-full bg-slate-200 h-2.5 rounded-full overflow-hidden">
+                    <div class="bg-gradient-to-r from-brand-600 to-indigo-500 h-full rounded-full w-[92%]"></div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Interactive Feature Highlight -->
+              <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
+                <div class="flex items-center gap-2">
+                  <i data-lucide="shield-check" class="w-4 h-4 text-brand-600"></i>
+                  <span>ISO 27001 Security Standard</span>
+                </div>
+                <span class="font-semibold text-brand-700">Verified</span>
+              </div>
+
+            </div>
+
+            <!-- Floating Badge Widget 1 -->
+            <div class="absolute -bottom-6 -left-6 bg-white/95 backdrop-blur-md p-4 rounded-2xl shadow-xl border border-slate-100 flex items-center gap-3 hidden sm:flex">
+              <div class="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center">
+                <i data-lucide="award" class="w-6 h-6"></i>
+              </div>
+              <div>
+                <p class="text-xs text-slate-400 font-medium">Kepuasan Klien</p>
+                <p class="text-base font-bold text-slate-800">4.9 / 5.0 Rating</p>
+              </div>
+            </div>
+
+            <!-- Floating Badge Widget 2 -->
+            <div class="absolute -top-6 -right-6 bg-brand-900 text-white p-4 rounded-2xl shadow-xl hidden sm:flex items-center gap-3">
+              <div class="w-10 h-10 rounded-lg bg-brand-800 flex items-center justify-center text-brand-300">
+                <i data-lucide="cpu" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <p class="text-[11px] text-brand-200">Teknologi Modern</p>
+                <p class="text-sm font-bold">Cloud & AI Ready</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats / Key Metrics Section -->
+  <section class="py-12 bg-brand-900 text-white relative overflow-hidden">
+    <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#93c5fd_1px,transparent_1px)] [background-size:16px_16px]"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center divide-y lg:divide-y-0 lg:divide-x divide-brand-800">
+        
+        <div class="pt-4 lg:pt-0 lg:px-4">
+          <div class="inline-flex p-3 rounded-xl bg-brand-800/60 text-brand-300 mb-3">
+            <i data-lucide="check-circle-2" class="w-6 h-6"></i>
+          </div>
+          <p class="text-4xl font-extrabold text-white tracking-tight">500+</p>
+          <p class="text-sm text-brand-200 font-medium mt-1">Proyek Terselesaikan</p>
+        </div>
+
+        <div class="pt-4 lg:pt-0 lg:px-4">
+          <div class="inline-flex p-3 rounded-xl bg-brand-800/60 text-brand-300 mb-3">
+            <i data-lucide="smile" class="w-6 h-6"></i>
+          </div>
+          <p class="text-4xl font-extrabold text-white tracking-tight">99%</p>
+          <p class="text-sm text-brand-200 font-medium mt-1">Tingkat Kepuasan Klien</p>
+        </div>
+
+        <div class="pt-4 lg:pt-0 lg:px-4">
+          <div class="inline-flex p-3 rounded-xl bg-brand-800/60 text-brand-300 mb-3">
+            <i data-lucide="calendar" class="w-6 h-6"></i>
+          </div>
+          <p class="text-4xl font-extrabold text-white tracking-tight">10+</p>
+          <p class="text-sm text-brand-200 font-medium mt-1">Tahun Pengalaman</p>
+        </div>
+
+        <div class="pt-4 lg:pt-0 lg:px-4">
+          <div class="inline-flex p-3 rounded-xl bg-brand-800/60 text-brand-300 mb-3">
+            <i data-lucide="briefcase" class="w-6 h-6"></i>
+          </div>
+          <p class="text-4xl font-extrabold text-white tracking-tight">150+</p>
+          <p class="text-sm text-brand-200 font-medium mt-1">Mitra Bisnis Korporat</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Tentang Kami (About Us) Section -->
+  <section id="tentang" class="py-24 bg-white relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+        <span class="text-brand-600 font-bold text-sm tracking-wider uppercase">Profil Perusahaan</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+          Membangun Masa Depan Bisnis dengan Solusi Berkelas
+        </h2>
+        <p class="text-slate-600 text-base sm:text-lg">
+          Mengenal lebih dekat PT. XYZ, komitmen, serta nilai-nilai dasar yang mengarahkan setiap langkah perjalanan inovasi kami.
+        </p>
+      </div>
+
+      <div class="grid lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Story & Profile -->
+        <div class="lg:col-span-6 space-y-6">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-slate-100 text-slate-700 text-xs font-semibold">
+            <i data-lucide="flag" class="w-3.5 h-3.5 text-brand-600"></i>
+            Berdiri Sejak Tahun 2014
+          </div>
+
+          <h3 class="text-2xl font-bold text-slate-900">
+            Dedikasi Tinggi untuk Mendorong Kemandirian Teknologi Nasional
+          </h3>
+
+          <p class="text-slate-600 leading-relaxed">
+            PT. XYZ adalah perusahaan konsultan dan pengembang solusi teknologi informasi terpadu. Kami bermitra dengan perusahaan multi-sektor—mulai dari perbankan, manufaktur, logistik, hingga instansi pemerintahan—guna merancang sistem digital yang efisien, aman, dan berdaya saing tinggi.
+          </p>
+
+          <p class="text-slate-600 leading-relaxed">
+            Didukung oleh puluhan tenaga ahli bersertifikasi internasional di bidang software engineering, cybersecurity, dan arsitektur cloud, kami berkomitmen memberikan hasil kerja berstandar tertinggi.
+          </p>
+
+          <!-- Vision & Mission Mini Cards -->
+          <div class="grid sm:grid-cols-2 gap-4 pt-2">
+            <div class="p-4 rounded-xl border border-brand-100 bg-brand-50/40">
+              <div class="flex items-center gap-2 text-brand-700 font-bold mb-2">
+                <i data-lucide="eye" class="w-5 h-5"></i>
+                <h4>Visi Kami</h4>
+              </div>
+              <p class="text-xs text-slate-600 leading-relaxed">
+                Menjadi katalisator transformasi digital paling tepercaya di Asia Tenggara dengan inovasi teknologi bernilai guna tinggi.
+              </p>
+            </div>
+
+            <div class="p-4 rounded-xl border border-brand-100 bg-brand-50/40">
+              <div class="flex items-center gap-2 text-brand-700 font-bold mb-2">
+                <i data-lucide="target" class="w-5 h-5"></i>
+                <h4>Misi Kami</h4>
+              </div>
+              <p class="text-xs text-slate-600 leading-relaxed">
+                Menyediakan solusi komprehensif, mengedepankan keamanan data, serta mendukung efisiensi jangka panjang setiap mitra.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pillar Core Values Cards -->
+        <div class="lg:col-span-6 space-y-4">
+          <div class="text-sm font-bold uppercase tracking-wider text-slate-400 mb-2">Pilar Nilai Utama Kami</div>
+          
+          <!-- Value 1 -->
+          <div class="flex gap-4 p-5 rounded-2xl bg-white border border-slate-200/80 shadow-sm hover:border-brand-300 hover:shadow-md transition-all duration-200">
+            <div class="w-12 h-12 rounded-xl bg-brand-50 flex items-center justify-center text-brand-600 shrink-0">
+              <i data-lucide="lightbulb" class="w-6 h-6"></i>
+            </div>
+            <div>
+              <h4 class="text-base font-bold text-slate-900 mb-1">Inovasi Berkelanjutan</h4>
+              <p class="text-sm text-slate-600 leading-relaxed">
+                Terus mengadopsi kemajuan teknologi terkini agar solusi yang kami hadirkan tetap relevan, modern, dan memberikan keunggulan kompetitif.
+              </p>
+            </div>
+          </div>
+
+          <!-- Value 2 -->
+          <div class="flex gap-4 p-5 rounded-2xl bg-white border border-slate-200/80 shadow-sm hover:border-brand-300 hover:shadow-md transition-all duration-200">
+            <div class="w-12 h-12 rounded-xl bg-brand-50 flex items-center justify-center text-brand-600 shrink-0">
+              <i data-lucide="shield" class="w-6 h-6"></i>
+            </div>
+            <div>
+              <h4 class="text-base font-bold text-slate-900 mb-1">Integritas Tanpa Kompromi</h4>
+              <p class="text-sm text-slate-600 leading-relaxed">
+                Menjaga kejujuran, kerahasiaan data klien, serta transparansi penuh dalam setiap kesepakatan dan proses implementasi proyek.
+              </p>
+            </div>
+          </div>
+
+          <!-- Value 3 -->
+          <div class="flex gap-4 p-5 rounded-2xl bg-white border border-slate-200/80 shadow-sm hover:border-brand-300 hover:shadow-md transition-all duration-200">
+            <div class="w-12 h-12 rounded-xl bg-brand-50 flex items-center justify-center text-brand-600 shrink-0">
+              <i data-lucide="check-check" class="w-6 h-6"></i>
+            </div>
+            <div>
+              <h4 class="text-base font-bold text-slate-900 mb-1">Profesionalisme & Kualitas Ekselen</h4>
+              <p class="text-sm text-slate-600 leading-relaxed">
+                Bekerja dengan metodologi ketat, delivery tepat waktu, dan pengawasan mutu tanpa henti guna menghasilkan performa terbaik.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Layanan Kami (Services) Section -->
+  <section id="layanan" class="py-24 bg-slate-50 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+        <span class="text-brand-600 font-bold text-sm tracking-wider uppercase">Layanan Unggulan</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+          Solusi Menyeluruh untuk Semua Kebutuhan Digital
+        </h2>
+        <p class="text-slate-600 text-base sm:text-lg">
+          Kami menyediakan rangkaian spektrum keahlian teknologi menyeluruh dari hulu ke hilir untuk memperkuat infrastruktur bisnis Anda.
+        </p>
+      </div>
+
+      <!-- Services Grid (6 Cards) -->
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <!-- Service Card 1 -->
+        <div class="bg-white rounded-2xl p-8 border border-slate-200/70 shadow-sm hover:shadow-card-hover hover:border-brand-300 transition-all duration-300 flex flex-col justify-between group">
+          <div>
+            <div class="w-14 h-14 rounded-xl bg-brand-50 text-brand-600 flex items-center justify-center mb-6 group-hover:bg-brand-600 group-hover:text-white transition-colors duration-300">
+              <i data-lucide="zap" class="w-7 h-7"></i>
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-brand-700 transition-colors">
+              Transformasi Digital
+            </h3>
+            <p class="text-slate-600 text-sm leading-relaxed mb-6">
+              Modernisasi alur kerja konvensional menjadi ekosistem digital otomatis yang hemat biaya dan terintegrasi penuh antar departemen.
+            </p>
+          </div>
+          <ul class="text-xs text-slate-500 space-y-2 border-t border-slate-100 pt-4">
+            <li class="flex items-center gap-2">
+              <i data-lucide="check" class="w-4 h-4 text-emerald-500"></i> Audit Proses Bisnis
+            </li>
+            <li class="flex items-center gap-2">
+              <i data-lucide="check" class="w-4 h-4 text-emerald-500"></i> Automasi Workflow Kerja
+            </li>
+          </ul>
+        </div>
+
+        <!-- Service Card 2 -->
+        <div class="bg-white rounded-2xl p-8 border border-slate-200/70 shadow-sm hover:shadow-card-hover hover:border-brand-300 transition-all duration-300 flex flex-col justify-between group">
+          <div>
+            <div class="w-14 h-14 rounded-xl bg-brand-50 text-brand-600 flex items-center justify-center mb-6 group-hover:bg-brand-600 group-hover:text-white transition-colors duration-300">
+              <i data-lucide="code-2" class="w-7 h-7"></i>
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-brand-700 transition-colors">
+              Pengembangan Web & Aplikasi
+            </h3>
+            <p class="text-slate-600 text-sm leading-relaxed mb-6">
+              Membangun aplikasi mobile & portal web kustom berkinerja tinggi, responsif, dan dirancang khusus sesuai model bisnis perusahaan.
+            </p>
+          </div>
+          <ul class="text-xs text-slate-500 space-y-2 border-t border-slate-100 pt-4">
+            <li class="flex items-center gap-2">
+              <i data-lucide="check" class="w-4 h-4 text-emerald-500"></i> Aplikasi iOS & Android
+            </li>
+            <li class="flex items-center gap-2">
+              <i data-lucide="check" class="w-4 h-4 text-emerald-500"></i> Platform Web Enterprise
+            </li>
+          </ul>
+        </div>
+
+        <!-- Service Card 3 -->
+        <div class="bg-white rounded-2xl p-8 border border-slate-200/70 shadow-sm hover:shadow-card-hover hover:border-brand-300 transition-all duration-300 flex flex-col justify-between group">
+          <div>
+            <div class="w-14 h-14 rounded-xl bg-brand-50 text-brand-600 flex items-center justify-center mb-6 group-hover:bg-brand-600 group-hover:text-white transition-colors duration-300">
+              <i data-lucide="cloud" class="w-7 h-7"></i>
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-brand-700 transition-colors">
+              Cloud & Keamanan Siber
+            </h3>
+            <p class="text-slate-600 text-sm leading-relaxed mb-6">
+              Migrasi infrastruktur ke cloud (AWS, Azure, GCP) serta proteksi perimeter data dari ancaman serangan siber dengan standar mutakhir.
+            </p>
+          </div>
+          <ul class="text-xs text-slate-500 space-y-2 border-t border-slate-100 pt-4">
+            <li class="flex items-center gap-2">
+              <i data-lucide="check" class="w-4 h-4 text-emerald-500"></i> Cloud Architecture & DevOps
+            </li>
+            <li class="flex items-center gap-2">
+              <i data-lucide="check" class="w-4 h-4 text-emerald-500"></i> Penetration Testing & Firewall
+            </li>
+          </ul>
+        </div>
+
+        <!-- Service Card 4 -->
+        <div class="bg-white rounded-2xl p-8 border border-slate-200/70 shadow-sm hover:shadow-card-hover hover:border-brand-300 transition-all duration-300 flex flex-col justify-between group">
+          <div>
+            <div class="w-14 h-14 rounded-xl bg-brand-50 text-brand-600 flex items-center justify-center mb-6 group-hover:bg-brand-600 group-hover:text-white transition-colors duration-300">
+              <i data-lucide="network" class="w-7 h-7"></i>
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-brand-700 transition-colors">
+              Integrasi Sistem Enterprise
+            </h3>
+            <p class="text-slate-600 text-sm leading-relaxed mb-6">
+              Menghubungkan aplikasi legacy, ERP, CRM, dan payment gateway ke dalam satu arsitektur terpadu tanpa friksi data.
+            </p>
+          </div>
+          <ul class="text-xs text-slate-500 space-y-2 border-t border-slate-100 pt-4">
+            <li class="flex items-center gap-2">
+              <i data-lucide="check" class="w-4 h-4 text-emerald-500"></i> Desain Arsitektur API
+            </li>
+            <li class="flex items-center gap-2">
+              <i data-lucide="check" class="w-4 h-4 text-emerald-500"></i> Sinkronisasi Multi-Platform
+            </li>
+          </ul>
+        </div>
+
+        <!-- Service Card 5 -->
+        <div class="bg-white rounded-2xl p-8 border border-slate-200/70 shadow-sm hover:shadow-card-hover hover:border-brand-300 transition-all duration-300 flex flex-col justify-between group">
+          <div>
+            <div class="w-14 h-14 rounded-xl bg-brand-50 text-brand-600 flex items-center justify-center mb-6 group-hover:bg-brand-600 group-hover:text-white transition-colors duration-300">
+              <i data-lucide="trending-up" class="w-7 h-7"></i>
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-brand-700 transition-colors">
+              Konsultasi Strategis Bisnis & IT
+            </h3>
+            <p class="text-slate-600 text-sm leading-relaxed mb-6">
+              Penyusunan blueprint roadmap IT, evaluasi kelayakan investasi teknologi, dan tata kelola berbasis Good Corporate Governance.
+            </p>
+          </div>
+          <ul class="text-xs text-slate-500 space-y-2 border-t border-slate-100 pt-4">
+            <li class="flex items-center gap-2">
+              <i data-lucide="check" class="w-4 h-4 text-emerald-500"></i> IT Master Plan (ITMP)
+            </li>
+            <li class="flex items-center gap-2">
+              <i data-lucide="check" class="w-4 h-4 text-emerald-500"></i> Analisis Kelayakan Biaya (ROI)
+            </li>
+          </ul>
+        </div>
+
+        <!-- Service Card 6 -->
+        <div class="bg-white rounded-2xl p-8 border border-slate-200/70 shadow-sm hover:shadow-card-hover hover:border-brand-300 transition-all duration-300 flex flex-col justify-between group">
+          <div>
+            <div class="w-14 h-14 rounded-xl bg-brand-50 text-brand-600 flex items-center justify-center mb-6 group-hover:bg-brand-600 group-hover:text-white transition-colors duration-300">
+              <i data-lucide="headphones" class="w-7 h-7"></i>
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-brand-700 transition-colors">
+              IT Maintenance & Support 24/7
+            </h3>
+            <p class="text-slate-600 text-sm leading-relaxed mb-6">
+              Dukungan teknis berkala, monitoring performa server secara proaktif, dan respon insiden darurat dengan SLA terjamin.
+            </p>
+          </div>
+          <ul class="text-xs text-slate-500 space-y-2 border-t border-slate-100 pt-4">
+            <li class="flex items-center gap-2">
+              <i data-lucide="check" class="w-4 h-4 text-emerald-500"></i> Helpdesk Terdedikasi
+            </li>
+            <li class="flex items-center gap-2">
+              <i data-lucide="check" class="w-4 h-4 text-emerald-500"></i> Backup & Disaster Recovery
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Keunggulan Kami (Why Choose Us) Section -->
+  <section id="keunggulan" class="py-24 bg-white relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Left Side: Visual Feature Callout -->
+        <div class="lg:col-span-5 order-2 lg:order-1">
+          <div class="bg-gradient-to-br from-brand-900 to-slate-900 text-white p-8 sm:p-10 rounded-3xl shadow-xl relative overflow-hidden">
+            <div class="absolute -right-10 -bottom-10 w-64 h-64 bg-brand-500/20 rounded-full blur-3xl"></div>
+            
+            <span class="inline-block px-3 py-1 rounded-full bg-brand-800 text-brand-200 text-xs font-semibold mb-4">
+              Komitmen Keunggulan
+            </span>
+
+            <h3 class="text-2xl sm:text-3xl font-bold mb-6">
+              Mengapa Ratusan Klien Korporasi Memilih PT. XYZ?
+            </h3>
+
+            <p class="text-slate-300 text-sm leading-relaxed mb-8">
+              Kami tidak sekadar menulis kode atau memasang infrastruktur. Kami menempatkan diri sebagai mitra strategis yang fokus pada pencapaian tujuan bisnis konkret Anda.
+            </p>
+
+            <div class="space-y-4">
+              <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-full bg-brand-800 flex items-center justify-center text-brand-300">
+                  <i data-lucide="check" class="w-4 h-4"></i>
+                </div>
+                <span class="text-sm font-medium text-slate-200">Garansi Layanan & SLA 99.9%</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-full bg-brand-800 flex items-center justify-center text-brand-300">
+                  <i data-lucide="check" class="w-4 h-4"></i>
+                </div>
+                <span class="text-sm font-medium text-slate-200">Skalabilitas Sistem Fleksibel</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-full bg-brand-800 flex items-center justify-center text-brand-300">
+                  <i data-lucide="check" class="w-4 h-4"></i>
+                </div>
+                <span class="text-sm font-medium text-slate-200">Keamanan Data Teruji & Tersertifikasi</span>
+              </div>
+            </div>
+
+            <div class="mt-8 pt-6 border-t border-slate-800 flex items-center justify-between">
+              <div>
+                <p class="text-xs text-slate-400">Total Proyek</p>
+                <p class="text-xl font-bold text-white">500+ Sukses</p>
+              </div>
+              <a href="#kontak" class="text-xs font-semibold text-brand-300 hover:text-white flex items-center gap-1">
+                Diskusikan Proyek Anda <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Side: Point list -->
+        <div class="lg:col-span-7 order-1 lg:order-2 space-y-6">
+          <span class="text-brand-600 font-bold text-sm tracking-wider uppercase">Diferensiasi Kami</span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+            Standar Kerja Unggul, Transparan, dan Berorientasi Hasil Nyata
+          </h2>
+          <p class="text-slate-600 leading-relaxed">
+            Setiap solusi yang kami rancang selalu mengacu pada 4 prinsip utama untuk meminimalisasi risiko implementasi dan memaksimalkan pengembalian investasi (ROI).
+          </p>
+
+          <div class="grid sm:grid-cols-2 gap-6 pt-2">
+            
+            <div class="space-y-2">
+              <div class="w-10 h-10 rounded-lg bg-brand-50 text-brand-700 flex items-center justify-center font-bold">
+                01
+              </div>
+              <h4 class="text-lg font-bold text-slate-900">Metodologi Agile & Tepat Waktu</h4>
+              <p class="text-sm text-slate-600 leading-relaxed">
+                Pengerjaan bertahap dengan sprint terukur, pelaporan mingguan transparan, serta jaminan delivery tepat sasaran.
+              </p>
+            </div>
+
+            <div class="space-y-2">
+              <div class="w-10 h-10 rounded-lg bg-brand-50 text-brand-700 flex items-center justify-center font-bold">
+                02
+              </div>
+              <h4 class="text-lg font-bold text-slate-900">Arsitektur Modular & Skalabel</h4>
+              <p class="text-sm text-slate-600 leading-relaxed">
+                Dirancang agar sistem dapat bertumbuh seiring pembesaran skala bisnis tanpa perlu merombak dari awal.
+              </p>
+            </div>
+
+            <div class="space-y-2">
+              <div class="w-10 h-10 rounded-lg bg-brand-50 text-brand-700 flex items-center justify-center font-bold">
+                03
+              </div>
+              <h4 class="text-lg font-bold text-slate-900">Talenta Senior Tersertifikasi</h4>
+              <p class="text-sm text-slate-600 leading-relaxed">
+                Tim developer, devops, dan konsultan memiliki sertifikasi global (Scrum, AWS, Cisco, TOGAF).
+              </p>
+            </div>
+
+            <div class="space-y-2">
+              <div class="w-10 h-10 rounded-lg bg-brand-50 text-brand-700 flex items-center justify-center font-bold">
+                04
+              </div>
+              <h4 class="text-lg font-bold text-slate-900">Dukungan Purna Jual Prima</h4>
+              <p class="text-sm text-slate-600 leading-relaxed">
+                Kami mendampingi masa transisi, pelatihan tim internal Anda, hingga masa pemeliharaan jangka panjang.
+              </p>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Testimoni Klien Section -->
+  <section id="testimoni" class="py-24 bg-slate-50 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+        <span class="text-brand-600 font-bold text-sm tracking-wider uppercase">Kepercayaan Klien</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+          Apa Kata Pemimpin Perusahaan Tentang Kami
+        </h2>
+        <p class="text-slate-600 text-base sm:text-lg">
+          Pengalaman nyata mitra bisnis yang telah mempercayakan agenda digitalisasi mereka kepada PT. XYZ.
+        </p>
+      </div>
+
+      <!-- Testimonial Cards Grid -->
+      <div class="grid md:grid-cols-3 gap-8">
+        
+        <!-- Testimonial 1 -->
+        <div class="bg-white p-8 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-card-hover transition-all duration-300 flex flex-col justify-between">
+          <div class="space-y-4">
+            <!-- Stars -->
+            <div class="flex text-amber-400 gap-1">
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+            </div>
+            <p class="text-slate-600 text-sm leading-relaxed italic">
+              "Kerja sama kami dengan PT. XYZ berhasil memangkas waktu pemrosesan transaksi logistik hingga 60%. Tim sangat solutif dan mampu memahami kompleksitas bisnis kami dengan cepat."
+            </p>
+          </div>
+          <div class="flex items-center gap-3 pt-6 mt-6 border-t border-slate-100">
+            <div class="w-11 h-11 rounded-full bg-brand-100 text-brand-700 flex items-center justify-center font-bold text-sm">
+              BS
+            </div>
+            <div>
+              <h5 class="text-sm font-bold text-slate-900">Budi Santoso</h5>
+              <p class="text-xs text-slate-500">Chief Technology Officer, Logistik Express</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 2 -->
+        <div class="bg-white p-8 rounded-2xl border border-brand-200 shadow-md shadow-brand-600/5 hover:shadow-card-hover transition-all duration-300 flex flex-col justify-between relative">
+          <div class="absolute -top-3 right-6 bg-brand-600 text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+            Featured Partner
+          </div>
+          <div class="space-y-4">
+            <div class="flex text-amber-400 gap-1">
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+            </div>
+            <p class="text-slate-600 text-sm leading-relaxed italic">
+              "Migrasi data core banking kami ke cloud berjalan mulus tanpa downtime berlebih. Standar kepatuhan keamanan siber yang mereka terapkan sangat meyakinkan komite audit kami."
+            </p>
+          </div>
+          <div class="flex items-center gap-3 pt-6 mt-6 border-t border-slate-100">
+            <div class="w-11 h-11 rounded-full bg-brand-700 text-white flex items-center justify-center font-bold text-sm">
+              HW
+            </div>
+            <div>
+              <h5 class="text-sm font-bold text-slate-900">Hendro Wicaksono</h5>
+              <p class="text-xs text-slate-500">VP of Infrastructure, Bank Finansial Asia</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 3 -->
+        <div class="bg-white p-8 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-card-hover transition-all duration-300 flex flex-col justify-between">
+          <div class="space-y-4">
+            <div class="flex text-amber-400 gap-1">
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+            </div>
+            <p class="text-slate-600 text-sm leading-relaxed italic">
+              "Aplikasi mobile loyalty yang dibangun PT. XYZ menaikkan retensi pelanggan ritel kami sebesar 35% dalam waktu 6 bulan pertama peluncuran. Sangat direkomendasikan!"
+            </p>
+          </div>
+          <div class="flex items-center gap-3 pt-6 mt-6 border-t border-slate-100">
+            <div class="w-11 h-11 rounded-full bg-brand-100 text-brand-700 flex items-center justify-center font-bold text-sm">
+              RA
+            </div>
+            <div>
+              <h5 class="text-sm font-bold text-slate-900">Rina Anggraini</h5>
+              <p class="text-xs text-slate-500">Direktur Komersial, Retailindo Megah</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Hubungi Kami (Contact Us) Section -->
+  <section id="kontak" class="py-24 bg-white relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+        <span class="text-brand-600 font-bold text-sm tracking-wider uppercase">Hubungi Kami</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+          Mari Mulai Percakapan dan Konsultasikan Kebutuhan Anda
+        </h2>
+        <p class="text-slate-600 text-base sm:text-lg">
+          Diskusikan tantangan bisnis atau rencana proyek Anda bersama tim konsultan ahli kami hari ini.
+        </p>
+      </div>
+
+      <div class="grid lg:grid-cols-12 gap-12">
+        
+        <!-- Contact Information (Left) -->
+        <div class="lg:col-span-5 space-y-8">
+          <div>
+            <h3 class="text-2xl font-bold text-slate-900 mb-2">Kantor Pusat PT. XYZ</h3>
+            <p class="text-slate-600 text-sm leading-relaxed">
+              Silakan hubungi kami melalui saluran komunikasi resmi berikut atau buat janji temu konsultasi langsung di kantor kami.
+            </p>
+          </div>
+
+          <div class="space-y-6">
+            
+            <!-- Address Item -->
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 rounded-xl bg-brand-50 text-brand-600 flex items-center justify-center shrink-0">
+                <i data-lucide="map-pin" class="w-6 h-6"></i>
+              </div>
+              <div>
+                <h4 class="text-sm font-bold text-slate-900">Alamat Kantor</h4>
+                <p class="text-sm text-slate-600 leading-relaxed mt-1">
+                  Menara Sudirman Lt. 24, Jl. Jend. Sudirman Kav. 60, SCBD, Jakarta Selatan, 12190, Indonesia
+                </p>
+              </div>
+            </div>
+
+            <!-- Email Item -->
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 rounded-xl bg-brand-50 text-brand-600 flex items-center justify-center shrink-0">
+                <i data-lucide="mail" class="w-6 h-6"></i>
+              </div>
+              <div>
+                <h4 class="text-sm font-bold text-slate-900">Email Resmi</h4>
+                <p class="text-sm text-slate-600 leading-relaxed mt-1">
+                  kontak@xyz-company.co.id<br>
+                  partnership@xyz-company.co.id
+                </p>
+              </div>
+            </div>
+
+            <!-- Phone / WhatsApp Item -->
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 rounded-xl bg-brand-50 text-brand-600 flex items-center justify-center shrink-0">
+                <i data-lucide="phone-call" class="w-6 h-6"></i>
+              </div>
+              <div>
+                <h4 class="text-sm font-bold text-slate-900">Telepon & WhatsApp</h4>
+                <p class="text-sm text-slate-600 leading-relaxed mt-1">
+                  +62 21 5550 8899 (Hunting)<br>
+                  +62 811 2345 6789 (Hotline Bisnis)
+                </p>
+              </div>
+            </div>
+
+            <!-- Office Hours Item -->
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 rounded-xl bg-brand-50 text-brand-600 flex items-center justify-center shrink-0">
+                <i data-lucide="clock" class="w-6 h-6"></i>
+              </div>
+              <div>
+                <h4 class="text-sm font-bold text-slate-900">Jam Operasional</h4>
+                <p class="text-sm text-slate-600 leading-relaxed mt-1">
+                  Senin - Jumat: 08.30 - 17.30 WIB<br>
+                  Sabtu - Minggu: Layanan Darurat IT 24 Jam
+                </p>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Quick WhatsApp CTA Badge -->
+          <div class="p-5 rounded-2xl bg-emerald-50 border border-emerald-200 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-full bg-emerald-500 text-white flex items-center justify-center">
+                <i data-lucide="message-circle" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <p class="text-xs font-semibold text-emerald-900">Respon Cepat WhatsApp</p>
+                <p class="text-xs text-emerald-700">Tersedia selama jam kerja aktif</p>
+              </div>
+            </div>
+            <a href="https://wa.me/6281123456789" target="_blank" rel="noopener noreferrer" class="text-xs font-bold text-white bg-emerald-600 hover:bg-emerald-700 px-3.5 py-2 rounded-lg transition-colors">
+              Chat Sekarang
+            </a>
+          </div>
+        </div>
+
+        <!-- Interactive Form (Right) -->
+        <div class="lg:col-span-7">
+          <div class="bg-white p-8 sm:p-10 rounded-3xl border border-slate-200/90 shadow-xl">
+            <h3 class="text-xl font-bold text-slate-900 mb-2">Formulir Permintaan Konsultasi</h3>
+            <p class="text-sm text-slate-500 mb-8">Isi informasi di bawah ini, tim konsultan kami akan menghubungi Anda dalam waktu 1x24 jam kerja.</p>
+
+            <form id="contact-form" class="space-y-5">
+              
+              <div class="grid sm:grid-cols-2 gap-5">
+                <div>
+                  <label for="nama" class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">Nama Lengkap *</label>
+                  <input type="text" id="nama" name="nama" required placeholder="Contoh: Andi Pratama" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-brand-500 text-sm transition-all">
+                </div>
+
+                <div>
+                  <label for="perusahaan" class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">Nama Perusahaan / Organisasi</label>
+                  <input type="text" id="perusahaan" name="perusahaan" placeholder="Contoh: PT. Maju Bersama" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-brand-500 text-sm transition-all">
+                </div>
+              </div>
+
+              <div class="grid sm:grid-cols-2 gap-5">
+                <div>
+                  <label for="email" class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">Alamat Email Bisnis *</label>
+                  <input type="email" id="email" name="email" required placeholder="andi@perusahaan.com" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-brand-500 text-sm transition-all">
+                </div>
+
+                <div>
+                  <label for="telepon" class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">Nomor Telepon / WhatsApp *</label>
+                  <input type="tel" id="telepon" name="telepon" required placeholder="081234567890" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-brand-500 text-sm transition-all">
+                </div>
+              </div>
+
+              <div>
+                <label for="layanan_minat" class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">Layanan yang Dibutuhkan</label>
+                <select id="layanan_minat" name="layanan_minat" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-brand-500 text-sm bg-white text-slate-700 transition-all">
+                  <option value="Transformasi Digital">Transformasi Digital</option>
+                  <option value="Pengembangan Web & Aplikasi">Pengembangan Web & Aplikasi Custom</option>
+                  <option value="Cloud & Keamanan Siber">Cloud & Keamanan Siber</option>
+                  <option value="Integrasi Sistem Enterprise">Integrasi Sistem Enterprise</option>
+                  <option value="Konsultasi Bisnis & IT">Konsultasi Bisnis & IT</option>
+                  <option value="IT Maintenance & Support">IT Maintenance & Support 24/7</option>
+                  <option value="Lainnya">Lainnya / Diskusi Khusus</option>
+                </select>
+              </div>
+
+              <div>
+                <label for="pesan" class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">Jelaskan Kebutuhan atau Rencana Anda *</label>
+                <textarea id="pesan" name="pesan" rows="4" required placeholder="Tuliskan gambaran ringkas proyek, ekspektasi waktu, atau tantangan yang sedang dihadapi..." class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-brand-500 text-sm transition-all"></textarea>
+              </div>
+
+              <div class="flex items-center gap-2">
+                <input type="checkbox" id="privacy" required class="w-4 h-4 rounded text-brand-600 focus:ring-brand-500 border-slate-300">
+                <label for="privacy" class="text-xs text-slate-500">
+                  Saya setuju bahwa data ini digunakan PT. XYZ untuk keperluan penawaran konsultasi.
+                </label>
+              </div>
+
+              <button type="submit" id="submit-btn" class="w-full py-4 px-6 rounded-xl font-bold text-white bg-brand-600 hover:bg-brand-700 shadow-lg shadow-brand-600/30 hover:shadow-brand-600/40 transition-all duration-200 flex items-center justify-center gap-2">
+                <span id="btn-text">Kirim Permintaan Konsultasi</span>
+                <i data-lucide="send" id="btn-icon" class="w-4 h-4"></i>
+              </button>
+
+            </form>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer class="bg-slate-950 text-slate-400 pt-16 pb-12 border-t border-slate-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-slate-900">
+        
+        <!-- Company Summary Column -->
+        <div class="lg:col-span-2 space-y-4">
+          <a href="#beranda" class="flex items-center gap-3">
+            <div class="w-9 h-9 rounded-lg bg-gradient-to-tr from-brand-600 to-brand-400 flex items-center justify-center text-white font-bold">
+              <i data-lucide="layers" class="w-5 h-5"></i>
+            </div>
+            <span class="text-xl font-bold tracking-tight text-white">
+              PT. XYZ<span class="text-brand-500">.</span>
+            </span>
+          </a>
+          <p class="text-sm text-slate-400 leading-relaxed pr-6">
+            Penyedia solusi terintegrasi dalam transformasi digital, pengembangan aplikasi mutakhir, dan manajemen keamanan komputasi awan bagi perusahaan di Indonesia.
+          </p>
+          <div class="flex items-center gap-3 pt-2">
+            <a href="#" class="w-9 h-9 rounded-lg bg-slate-900 hover:bg-brand-600 hover:text-white flex items-center justify-center text-slate-400 transition-colors" aria-label="LinkedIn">
+              <i data-lucide="linkedin" class="w-4 h-4"></i>
+            </a>
+            <a href="#" class="w-9 h-9 rounded-lg bg-slate-900 hover:bg-brand-600 hover:text-white flex items-center justify-center text-slate-400 transition-colors" aria-label="Twitter">
+              <i data-lucide="twitter" class="w-4 h-4"></i>
+            </a>
+            <a href="#" class="w-9 h-9 rounded-lg bg-slate-900 hover:bg-brand-600 hover:text-white flex items-center justify-center text-slate-400 transition-colors" aria-label="Instagram">
+              <i data-lucide="instagram" class="w-4 h-4"></i>
+            </a>
+            <a href="#" class="w-9 h-9 rounded-lg bg-slate-900 hover:bg-brand-600 hover:text-white flex items-center justify-center text-slate-400 transition-colors" aria-label="YouTube">
+              <i data-lucide="youtube" class="w-4 h-4"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="space-y-3">
+          <h4 class="text-xs font-bold uppercase tracking-wider text-slate-200">Navigasi Utama</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="#beranda" class="hover:text-white transition-colors">Beranda</a></li>
+            <li><a href="#tentang" class="hover:text-white transition-colors">Tentang Kami</a></li>
+            <li><a href="#layanan" class="hover:text-white transition-colors">Layanan Unggulan</a></li>
+            <li><a href="#keunggulan" class="hover:text-white transition-colors">Mengapa Kami</a></li>
+            <li><a href="#testimoni" class="hover:text-white transition-colors">Testimoni Klien</a></li>
+          </ul>
+        </div>
+
+        <!-- Services -->
+        <div class="space-y-3">
+          <h4 class="text-xs font-bold uppercase tracking-wider text-slate-200">Solusi Kami</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="#layanan" class="hover:text-white transition-colors">Transformasi Digital</a></li>
+            <li><a href="#layanan" class="hover:text-white transition-colors">Cloud & Cyber Security</a></li>
+            <li><a href="#layanan" class="hover:text-white transition-colors">Integrasi Enterprise</a></li>
+            <li><a href="#layanan" class="hover:text-white transition-colors">Aplikasi Mobile & Web</a></li>
+            <li><a href="#layanan" class="hover:text-white transition-colors">IT Consulting & Audit</a></li>
+          </ul>
+        </div>
+
+        <!-- Legal & Compliance -->
+        <div class="space-y-3">
+          <h4 class="text-xs font-bold uppercase tracking-wider text-slate-200">Legalitas</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="#" class="hover:text-white transition-colors">Kebijakan Privasi</a></li>
+            <li><a href="#" class="hover:text-white transition-colors">Syarat & Ketentuan</a></li>
+            <li><a href="#" class="hover:text-white transition-colors">Kepatuhan ISO 27001</a></li>
+            <li><a href="#" class="hover:text-white transition-colors">Perjanjian SLA</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+        <p>© 2026 PT. XYZ. Hak Cipta Dilindungi Undang-Undang.</p>
+        <p class="flex items-center gap-1">
+          Didesain secara profesional dengan presisi dan performa tinggi.
+        </p>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Floating Back-to-Top Button -->
+  <button id="back-to-top" class="fixed bottom-6 right-6 z-40 p-3 rounded-full bg-brand-600 text-white shadow-xl shadow-brand-600/30 hover:bg-brand-700 transition-all duration-300 opacity-0 pointer-events-none translate-y-3" aria-label="Kembali ke atas">
+    <i data-lucide="chevron-up" class="w-5 h-5"></i>
+  </button>
+
+  <!-- Interactive Custom Toast Notification (No alert()) -->
+  <div id="toast" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 transition-all duration-300 opacity-0 pointer-events-none translate-y-4 max-w-md w-full px-4">
+    <div class="bg-slate-900 text-white px-5 py-4 rounded-2xl shadow-2xl border border-slate-800 flex items-center gap-3">
+      <div class="w-8 h-8 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0">
+        <i data-lucide="check" class="w-4 h-4"></i>
+      </div>
+      <div class="flex-1 text-sm">
+        <p class="font-bold text-white" id="toast-title">Pesan Terkirim!</p>
+        <p class="text-xs text-slate-300" id="toast-desc">Terima kasih, tim PT. XYZ akan segera menghubungi Anda.</p>
+      </div>
+      <button id="toast-close-btn" class="text-slate-400 hover:text-white">
+        <i data-lucide="x" class="w-4 h-4"></i>
+      </button>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // 1. Inisialisasi ikon Lucide
+      if (window.lucide) {
+        lucide.createIcons();
+      }
+
+      // 2. Kontrol Sticky Header & Back to Top
+      const header = document.getElementById('main-header');
+      const backToTopBtn = document.getElementById('back-to-top');
+
+      window.addEventListener('scroll', () => {
+        const scrollPos = window.scrollY;
+
+        // Efek shadow dan border header saat di-scroll
+        if (scrollPos > 40) {
+          header.classList.add('shadow-md', 'bg-white/95');
+          header.classList.remove('bg-white/80');
+        } else {
+          header.classList.remove('shadow-md', 'bg-white/95');
+          header.classList.add('bg-white/80');
+        }
+
+        // Tombol back to top
+        if (scrollPos > 400) {
+          backToTopBtn.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-3');
+          backToTopBtn.classList.add('opacity-100', 'pointer-events-auto', 'translate-y-0');
+        } else {
+          backToTopBtn.classList.add('opacity-0', 'pointer-events-none', 'translate-y-3');
+          backToTopBtn.classList.remove('opacity-100', 'pointer-events-auto', 'translate-y-0');
+        }
+      });
+
+      backToTopBtn.addEventListener('click', () => {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      });
+
+      // 3. Kontrol Navigasi Mobile Drawer
+      const mobileBtn = document.getElementById('mobile-menu-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const menuIcon = document.getElementById('menu-icon');
+      const closeIcon = document.getElementById('close-icon');
+      const mobileLinks = document.querySelectorAll('.mobile-link');
+
+      const toggleMenu = () => {
+        const isHidden = mobileMenu.classList.contains('hidden');
+        if (isHidden) {
+          mobileMenu.classList.remove('hidden');
+          menuIcon.classList.add('hidden');
+          closeIcon.classList.remove('hidden');
+        } else {
+          mobileMenu.classList.add('hidden');
+          menuIcon.classList.remove('hidden');
+          closeIcon.classList.add('hidden');
+        }
+      };
+
+      mobileBtn.addEventListener('click', toggleMenu);
+
+      mobileLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          if (!mobileMenu.classList.contains('hidden')) {
+            toggleMenu();
+          }
+        });
+      });
+
+      // 4. Sistem Toast Notification (Pengganti alert())
+      const toast = document.getElementById('toast');
+      const toastCloseBtn = document.getElementById('toast-close-btn');
+      let toastTimeout = null;
+
+      const showToast = (title, desc) => {
+        const toastTitle = document.getElementById('toast-title');
+        const toastDesc = document.getElementById('toast-desc');
+
+        if (title) toastTitle.textContent = title;
+        if (desc) toastDesc.textContent = desc;
+
+        toast.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-4');
+        toast.classList.add('opacity-100', 'pointer-events-auto', 'translate-y-0');
+
+        clearTimeout(toastTimeout);
+        toastTimeout = setTimeout(() => {
+          hideToast();
+        }, 5000);
+      };
+
+      const hideToast = () => {
+        toast.classList.add('opacity-0', 'pointer-events-none', 'translate-y-4');
+        toast.classList.remove('opacity-100', 'pointer-events-auto', 'translate-y-0');
+      };
+
+      toastCloseBtn.addEventListener('click', hideToast);
+
+      // 5. Penanganan Form Kontak Interaktif
+      const contactForm = document.getElementById('contact-form');
+      const submitBtn = document.getElementById('submit-btn');
+      const btnText = document.getElementById('btn-text');
+
+      contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        // Simulasi status loading tombol
+        const originalText = btnText.textContent;
+        btnText.textContent = 'Mengirim Permintaan...';
+        submitBtn.disabled = true;
+        submitBtn.classList.add('opacity-80', 'cursor-not-allowed');
+
+        setTimeout(() => {
+          // Ambil nama pengirim
+          const senderName = document.getElementById('nama').value || 'Bapak/Ibu';
+
+          // Reset form dan tombol
+          contactForm.reset();
+          btnText.textContent = originalText;
+          submitBtn.disabled = false;
+          submitBtn.classList.remove('opacity-80', 'cursor-not-allowed');
+
+          // Tampilkan pesan sukses via toast non-intrusif
+          showToast(
+            'Permintaan Terkirim!',
+            `Terima kasih ${senderName}. Tim konsultan PT. XYZ akan menghubungi Anda via WhatsApp/Email segera.`
+          );
+        }, 1200);
+      });
+    });
+  </script>
+</body>
+</html>
